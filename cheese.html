@@ -8,11 +8,14 @@
         body {
             font-family: Arial, sans-serif;
             padding: 20px;
+            text-align: center; /* Center the text and elements */
         }
         #checkbox-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr); /* 3 columns */
             gap: 10px; /* Space between items */
+            justify-content: center; /* Center grid items horizontally */
+            margin-bottom: 20px;
         }
         .checkbox-group {
             display: flex;
@@ -34,9 +37,8 @@
             font-size: 20px;
             border-radius: 8px;
             cursor: pointer;
-            grid-column: 3; /* Place the button in the 3rd column */
-            justify-self: center; /* Center horizontally */
-            margin-top: 10px;
+            display: inline-block;
+            margin-top: 20px;
         }
         #submit-button:hover {
             background-color: #ff9900; /* Darker hover effect */
@@ -48,6 +50,9 @@
     <h1>Checkboxes with Random Phrases</h1>
 
     <div id="checkbox-container"></div>
+
+    <!-- Centered Submit Button -->
+    <button id="submit-button">Submit 🧀</button>
 
     <script>
         // Phrases pool with "cheese" and without "cheese"
@@ -95,13 +100,8 @@
             container.appendChild(checkboxDiv);
         });
 
-        // Add the Submit button at the end, in the 3rd column, centered
-        const submitButton = document.createElement("button");
-        submitButton.id = "submit-button";
-        submitButton.textContent = "Submit 🧀";
-        container.appendChild(submitButton);
-
         // Submit button action
+        const submitButton = document.getElementById("submit-button");
         submitButton.addEventListener("click", function() {
             alert("Okay we get it, you like cheese!");
         });
