@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkboxes with Cheese</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .checkbox-group {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Checkboxes with Random Phrases</h1>
+
+    <div id="checkbox-container"></div>
+
+    <script>
+        // Phrases pool with "cheese" and without "cheese"
+        const cheesePhrases = [
+            "I love cheese", "Cheese is life", "Would you like some cheese?", "Cheddar cheese is great", 
+            "Say cheese!", "Melting cheese is amazing", "Cheese on pizza", "Blue cheese tastes strong", 
+            "Grilled cheese sandwich", "Cheese and crackers"
+        ];
+
+        const nonCheesePhrases = [
+            "Walk the dog", "Ride a bike", "Watch a movie", "Play video games", "Read a book",
+            "Cook dinner", "Go for a hike", "Paint a picture", "Do some coding", "Listen to music",
+            "Write a letter", "Have a picnic", "Visit a friend", "Travel to Paris", "Run a marathon",
+            "Take a nap", "Go swimming", "Bake a cake", "Attend a concert", "Solve a puzzle"
+        ];
+
+        // Function to shuffle an array
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        // Combine both arrays and shuffle them
+        const allPhrases = cheesePhrases.concat(nonCheesePhrases);
+        shuffleArray(allPhrases);
+
+        // Add checkboxes to the page
+        const container = document.getElementById("checkbox-container");
+        allPhrases.forEach((phrase, index) => {
+            const checkboxDiv = document.createElement("div");
+            checkboxDiv.className = "checkbox-group";
+            
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.id = "checkbox" + index;
+
+            const label = document.createElement("label");
+            label.htmlFor = checkbox.id;
+            label.textContent = phrase;
+
+            checkboxDiv.appendChild(checkbox);
+            checkboxDiv.appendChild(label);
+            container.appendChild(checkboxDiv);
+        });
+    </script>
+
+</body>
+</html>
