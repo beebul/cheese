@@ -9,8 +9,20 @@
             font-family: Arial, sans-serif;
             padding: 20px;
         }
+        #checkbox-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            gap: 10px; /* Space between items */
+        }
         .checkbox-group {
-            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px; /* Make checkboxes bigger */
+            margin-right: 10px;
         }
     </style>
 </head>
