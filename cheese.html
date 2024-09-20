@@ -35,7 +35,7 @@
             border-radius: 8px;
             cursor: pointer;
             grid-column: 3; /* Place the button in the 3rd column */
-            justify-self: end; /* Align the button to the right */
+            justify-self: center; /* Center horizontally */
             margin-top: 10px;
         }
         #submit-button:hover {
@@ -95,7 +95,7 @@
             container.appendChild(checkboxDiv);
         });
 
-        // Add the Submit button at the end, in the 3rd column
+        // Add the Submit button at the end, in the 3rd column, centered
         const submitButton = document.createElement("button");
         submitButton.id = "submit-button";
         submitButton.textContent = "Submit 🧀";
