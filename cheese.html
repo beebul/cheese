@@ -24,6 +24,22 @@
             height: 20px; /* Make checkboxes bigger */
             margin-right: 10px;
         }
+        /* Style for the submit button */
+        #submit-button {
+            background-color: #ffcc00; /* Cheese-like color */
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            font-size: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        #submit-button:hover {
+            background-color: #ff9900; /* Darker hover effect */
+        }
     </style>
 </head>
 <body>
@@ -31,6 +47,9 @@
     <h1>Checkboxes with Random Phrases</h1>
 
     <div id="checkbox-container"></div>
+
+    <!-- Big Submit Button with Cheese Emoji -->
+    <button id="submit-button">Submit 🧀</button>
 
     <script>
         // Phrases pool with "cheese" and without "cheese"
@@ -76,6 +95,13 @@
             checkboxDiv.appendChild(checkbox);
             checkboxDiv.appendChild(label);
             container.appendChild(checkboxDiv);
+        });
+
+        // Submit button action
+        const submitButton = document.getElementById("submit-button");
+        submitButton.addEventListener("click", function() {
+            // Display the cheese message when the button is clicked
+            alert("Okay we get it, you like cheese!");
         });
     </script>
 
